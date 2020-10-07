@@ -2,6 +2,7 @@
 @import 'menu';
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -35,6 +36,10 @@ a {
     text-decoration: none;
 }
 
+.text-link {
+    color: $secondary-color;
+}
+
 header {
     position: fixed;
     z-index: 2;
@@ -62,6 +67,35 @@ main {
         overflow: hidden;
         h1 {
             margin-top: 20vh;
+        }
+    }
+}
+
+section {
+    padding: 4rem;
+    min-height: calc(100vh - 60px);
+    .icons {
+        margin-top: 1rem;
+        a {
+            padding: 0.4rem;
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+    &#home {
+        /* position: relative;
+        top: 20vh;
+        transform: translateY(50%); */
+        // overflow: hidden;
+        h1 {
+            margin-top: 20vh;
+            //text-align: center;
+            //transform: translatex(50%);
+        }
+        & {
+            text-align: center;
         }
     }
 }
@@ -134,6 +168,22 @@ main {
                 color: set-text-color($secondary-color);
             }
         }
+    }
+}
+
+//cv linked button in about page
+.link-btn {
+    margin-top: 1rem;
+    font-size: 2rem;
+    border: 3px #fff solid;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 3rem;
+    @include easeOut;
+    &:hover {
+        padding: 0.1rem 1rem;
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
     }
 }
 

@@ -9,6 +9,7 @@ const navItem = document.querySelectorAll('.nav-item');
 let showMenu = false;
 
 menuBtn.addEventListener('click', toggleMenu);
+menuNav.addEventListener('click', hideMenuOnClick);
 
 function toggleMenu() {
     if (!showMenu) {
@@ -21,13 +22,18 @@ function toggleMenu() {
         //set Menu state
         showMenu = true;
     } else {
-        menuBtn.classList.remove('close');
-        menu.classList.remove('show');
-        menuNav.classList.remove('show');
-        menuBranding.classList.remove('show');
-        navItem.forEach(item => item.classList.remove('show'));
 
-        //set Menu state
-        showMenu = false;
+        hideMenuOnClick();
     }
+}
+
+function hideMenuOnClick() {
+    menuBtn.classList.remove('close');
+    menu.classList.remove('show');
+    menuNav.classList.remove('show');
+    menuBranding.classList.remove('show');
+    navItem.forEach(item => item.classList.remove('show'));
+
+    //set Menu state
+    showMenu = false;
 }
