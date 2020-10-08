@@ -1,0 +1,1 @@
+Simple static website created in html, sass and javascript

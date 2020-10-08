@@ -37,3 +37,12 @@ function hideMenuOnClick() {
     //set Menu state
     showMenu = false;
 }
+
+//get full year for footer
+function getFullYear() {
+    var date = new Date();
+    var year = date.getFullYear();
+    document.getElementById("copyright-year").innerHTML = year;
+}
+//execute function to display year in footer
+getFullYear();

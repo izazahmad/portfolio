@@ -137,7 +137,8 @@ section {
     grid-gap: 0.7rem;
     grid-template-columns: repeat(3, 1fr);
     img {
-        width: 100%;
+        width: 334px;
+        height: 224px;
         border: 3px #fff solid;
         &:hover {
             opacity: 0.5;
