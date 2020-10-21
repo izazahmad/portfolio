@@ -6,9 +6,6 @@
 }
 
 body {
-    @include background();
-    background: $primary-color;
-    color: set-text-color($primary-color);
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,14 +17,9 @@ h1,
 h2,
 h3 {
     margin: 0;
-    font-weight: 400;
+    font-weight: 500;
     &.lg-heading {
         font-size: 6rem;
-    }
-    &.sm-heading {
-        margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color, 2), 0.5);
     }
 }
 
@@ -37,7 +29,12 @@ a {
 }
 
 .text-link {
-    color: $secondary-color;
+    &:hover,
+    &:focus {
+        color: #000;
+        @include shade(text, $offWhite, #fff, 10, 135deg, true);
+        @include easeOut();
+    }
 }
 
 header {
@@ -46,127 +43,183 @@ header {
     width: 100%;
 }
 
-.text-secondary {
-    color: $secondary-color;
-}
 
-main {
-    padding: 4rem;
-    min-height: calc(100vh - 60px);
-    .icons {
-        margin-top: 1rem;
-        a {
-            padding: 0.4rem;
-            &:hover {
-                color: $secondary-color;
-                @include easeOut();
-            }
-        }
-    }
-    &#home {
-        overflow: hidden;
-        h1 {
-            margin-top: 20vh;
-        }
-    }
-}
+/* .text-secondary {
+    color: $secondary-color;
+} */
 
 section {
     padding: 4rem;
-    min-height: calc(100vh - 60px);
+    min-height: 100vh;
+}
+
+#home {
+    @include bgParallax();
+    color: set-text-color($primary-color);
+    background-image: $home-image;
+    text-align: center;
+    box-shadow: inset 0 0 0 100vh rgba($primary-color, $background-opacity);
     .icons {
         margin-top: 1rem;
         a {
             padding: 0.4rem;
-            &:hover {
-                color: $secondary-color;
+            &:hover,
+            &:focus {
+                color: #000;
+                @include shade(text, $secondary-color, #fff, 10, 135deg, true);
                 @include easeOut();
             }
         }
     }
-    &#home {
-        /* position: relative;
-        top: 20vh;
-        transform: translateY(50%); */
-        // overflow: hidden;
-        h1 {
-            margin-top: 20vh;
-            //text-align: center;
-            //transform: translatex(50%);
-        }
-        & {
-            text-align: center;
+}
+
+.header {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Francois One', Helvetica, Arial, sans-serif;
+    font-size: 96px;
+    margin-top: 20vh;
+    color: $offWhite;
+    text-decoration: none;
+    @include outline($grayLight);
+    transition: all 400ms ease-in-out;
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+// effect for pushing the text down onto the page
+// default is the letters emerging from the page and merging back down on hover
+.header--pushDown {
+    @include shade(text, $secondary-color, #333, 10, 135deg, true); //#aaa
+    &:hover {
+        transform: translate(9px, 9px);
+        @include outline($offWhite); //grayLight
+    }
+}
+
+// creates a shadow effect, rather than a raised lettering effect
+// simply by adjusting the translate position a little
+.header--shadow {
+    &:hover {
+        transform: translate(5px, 0);
+    }
+    &.header--raiseUp {
+        &:hover {
+            transform: translate(-5px, 0);
         }
     }
 }
 
-.about-info {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
-    grid-template-columns: repeat(3, 1fr);
-    .bio-image {
-        grid-area: bioimage;
-        margin: auto;
-        border-radius: 50%;
-        border: $secondary-color 3px solid;
+#about {
+    background: linear-gradient(to bottom, #7927b2, #fb3182);
+    .main-heading {
+        background: #fff;
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        h1 {
+            background: linear-gradient(to right, #7927b2, #fb3182);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
     }
-    .bio {
-        grid-area: bio;
-        font-size: 1.5rem;
+    .small-heading {
+        @extend .main-heading;
+        margin: 10px 0;
+        h2 {
+            @extend h1;
+        }
     }
-    .job-1 {
-        grid-area: job1;
-    }
-    .job-2 {
-        grid-area: job2;
-    }
-    .job-3 {
-        grid-area: job3;
-    }
-    .job {
-        background: lighten($primary-color, 5);
-        padding: 0.5rem;
-        border-bottom: $secondary-color 5px solid;
+    .about-info {
+        .bio-heading {
+            @extend .main-heading;
+            margin: auto;
+            h3 {
+                @extend h1;
+                font-size: 90px;
+                font-weight: bold;
+            }
+        }
+        .bio-content {
+            @extend .main-heading;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 30px;
+            p {
+                @extend h1;
+                font-size: 1.5rem;
+            }
+        }
+        .bio-link {
+            @extend .main-heading;
+            margin: auto;
+            margin-top: 30px;
+            a {
+                @extend h1;
+                font-size: 2rem;
+                &:hover,
+                &:focus {
+                    @include shade(text, $secondary-color, #000, 10, 135deg, true);
+                    @include easeOut();
+                }
+            }
+        }
     }
 }
 
 //work/projects
-.projects {
-    display: grid;
-    grid-gap: 0.7rem;
-    grid-template-columns: repeat(3, 1fr);
-    img {
-        width: 339.4px;
-        height: 224px;
-        border: 3px #fff solid;
-        &:hover {
-            opacity: 0.5;
-            border-color: $secondary-color;
-            @include easeOut;
+#work {
+    //background: linear-gradient(to bottom right, lime, lightblue) 50% 50% / 100% 100% no-repeat;
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+    .sm-heading {
+        margin-bottom: 20px;
+    }
+    .projects {
+        display: grid;
+        grid-gap: 0.7rem;
+        grid-template-columns: repeat( auto-fit, minmax(300px, 1fr));
+        img {
+            width: 100%;
+            height: 224px;
+            border: 3px set-text-color(#fff) solid;
+            &:hover {
+                opacity: 0.5;
+                border-color: $secondary-color;
+                @include easeOut;
+            }
         }
     }
 }
 
 // contact page
-.boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem;
-    div {
-        font-size: 2rem;
-        border: 3px #fff solid;
-        padding: 1.5rem 2.5rem;
-        margin-bottom: 3rem;
-        @include easeOut;
-        &:hover {
-            padding: 0.5rem 1.5rem;
-            background: $secondary-color;
-            color: set-text-color($secondary-color);
-            span {
+#contact {
+    min-height: calc(100vh - 60px);
+    @include bgParallax();
+    background-color: $primary-color;
+    background-image: url(../img/world-map.png);
+    color: set-text-color($primary-color);
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 1rem;
+        div {
+            font-size: 2rem;
+            border: 3px set-text-color($primary-color) solid;
+            padding: 1.5rem 2.5rem;
+            margin-bottom: 3rem;
+            @include easeOut;
+            &:hover {
+                padding: 0.5rem 1.5rem;
+                background: $secondary-color;
                 color: set-text-color($secondary-color);
+                span {
+                    color: set-text-color($secondary-color);
+                }
             }
         }
     }
@@ -176,7 +229,7 @@ section {
 .link-btn {
     margin-top: 1rem;
     font-size: 2rem;
-    border: 3px #fff solid;
+    border: 3px set-text-color($secondary-color) solid;
     border-radius: 30px;
     padding: 0.5rem 1.5rem;
     margin-bottom: 3rem;

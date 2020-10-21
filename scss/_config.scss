@@ -1,30 +1,19 @@
 $primary-color: #444;
-$secondary-color: #eece1a;
+$secondary-color: #34c6d3; //#eece1a;
+$grayLight: #cac6c5;
+$offWhite: #e7e7e7;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
-$background-opacity: 0.9;
+$background-opacity:0.8;
 @mixin easeOut {
     transition: all 0.5s ease-out;
 }
 
-@mixin background {
-    @if $show-home-image {
-        & {
-            background: $home-image;
-            background-attachment: fixed;
-            background-size: cover;
-            &:after {
-                content: '';
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 100%;
-                height: 100%;
-                z-index: -1;
-                background: rgba($primary-color, $background-opacity);
-            }
-        }
-    }
+@mixin bgParallax {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 //set text color
@@ -35,6 +24,106 @@ $background-opacity: 0.9;
     @else {
         @return #fff;
     }
+}
+
+@function set-text-reverse-color($color) {
+    @if(set-text-color($color)==#000) {
+        @return #fff;
+    }
+    @else {
+        @return #000;
+    }
+}
+
+@function pow($number, $exp) {
+    $value: 1;
+    @if $exp>0 {
+        @for $i from 1 through $exp {
+            $value: $value * $number;
+        }
+    }
+    @else if $exp < 0 {
+        @for $i from 1 through -$exp {
+            $value: $value / $number;
+        }
+    }
+    @return $value;
+}
+
+@function fact($number) {
+    $value: 1;
+    @if $number>0 {
+        @for $i from 1 through $number {
+            $value: $value * $i;
+        }
+    }
+    @return $value;
+}
+
+@function pi() {
+    @return 3.14159265359;
+}
+
+@function rad($angle) {
+    $unit: unit($angle);
+    $unitless: $angle / ($angle * 0 + 1);
+    // If the angle has 'deg' as unit, convert to radians.
+    @if $unit==deg {
+        $unitless: $unitless / 180 * pi();
+    }
+    @return $unitless;
+}
+
+@function sin($angle) {
+    $sin: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+    }
+    @return $sin;
+}
+
+@function cos($angle) {
+    $cos: 0;
+    $angle: rad($angle);
+    // Iterate a bunch of times.
+    @for $i from 0 through 10 {
+        $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+    }
+    @return $cos;
+}
+
+@mixin shade($type, $color: #3498db, $borderColor: #fff, $depth: 20, $angle: 135deg, $long: false, $fade: false) {
+    $angle: ($angle - 90);
+    $x: 1.1 * cos($angle) + 0px;
+    $y: 1.1 * sin($angle) + 0px;
+    $darken: (lightness($color)/$depth)/2;
+    $opacify: 0;
+    $shadow: ();
+    @if $long==true {
+        $darken: 0;
+    }
+    @if $fade==true {
+        $opacify: (opacity($color)/$depth);
+        // added this for rendering in some browsers, remove if you like.
+        // @include translateZ(0);
+    }
+    @for $i from 1 through $depth {
+        $shadow: $shadow, $i*$x $i*$y 0 hsla(hue($color), saturation($color), (lightness($color) - ($i * $darken)), 1 - ($i * $opacify));
+    }
+    #{$type}-shadow: 1.5px 1.5px 0 $borderColor,
+    0px 1.5px 0 $borderColor,
+    -1.5px -1.5px 0 $borderColor,
+    -1.5px -1.5px 0 $borderColor,
+    -1.5px 1.5px 0 $borderColor,
+    1.5px -1.5px 0 $borderColor,
+    $shadow;
+}
+
+//mixin to provide just a basic outline for the text
+@mixin outline($color: #fff) {
+    text-shadow: 1.5px 1.5px 0 $color, -1.5px -1.5px 0 $color, -1.5px -1.5px 0 $color, -1.5px 1.5px 0 $color, 1.5px -1.5px 0 $color;
 }
 
 //Media Query mixins

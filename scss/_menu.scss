@@ -1,3 +1,35 @@
+#navbar {
+    overflow: hidden;
+    position: relative;
+    #navbar-center {
+        padding: 20px 30%;
+        text-align: center;
+        @include easeOut();
+        a {
+            color: #fff;
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            padding: 1rem 0.5rem;
+            font-weight: 300;
+            text-decoration: none;
+            &:hover,
+            &:focus {
+                background: none;
+                color: $secondary-color;
+            }
+        }
+        .active {
+            color: $secondary-color;
+        }
+    }
+}
+
+.navbar-on-scroll {
+    padding: 10px 30% !important;
+    background: rgba(0, 0, 0, 0.7);
+}
+
 // menu button
 .menu-btn {
     position: absolute;
@@ -10,6 +42,7 @@
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
+        border: #000 .5px solid;
         background: set-text-color($primary-color);
         @include easeOut;
     }

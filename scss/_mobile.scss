@@ -1,20 +1,20 @@
 //Widescreens
 @include mediaXl {
-    .projects {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    /*  .projects {
+        grid-template-columns: repeat(3, 1fr);
+    } */
 }
 
 //desktops and laptops
 @include mediaLg {
-    .projects {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    /* .projects {
+        grid-template-columns: repeat(2, 1fr);
+    } */
 }
 
 //tablets and small laptops
 @include mediaMd {
-    main {
+    section {
         align-items: center;
         text-align: center;
         .lg-heading {
@@ -44,9 +44,9 @@
             width: 150px;
             height: 150px;
         }
-        .projects {
+        /*  .projects {
             grid-template-columns: repeat(2, 1fr);
-        }
+        } */
     }
     .about-info {
         grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
@@ -64,9 +64,9 @@
         width: 150px;
         height: 150px;
     }
-    .projects {
+    /* .projects {
         grid-template-columns: 1fr;
-    }
+    } */
     .link-btn {
         font-size: 1rem;
         border: 2px #fff solid;
