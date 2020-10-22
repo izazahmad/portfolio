@@ -137,12 +137,12 @@ h3 {
     font-size: 6rem; }
 
 a {
-  color: #fff;
+  color: #cac6c5;
   text-decoration: none; }
 
 .text-link:hover, .text-link:focus {
   color: #000;
-  text-shadow: 1.5px 1.5px 0 #fff, 0px 1.5px 0 #fff, -1.5px -1.5px 0 #fff, -1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px -1.5px 0 #fff, 0.77782px 0.77782px 0 #e7e7e7, 1.55563px 1.55563px 0 #e7e7e7, 2.33345px 2.33345px 0 #e7e7e7, 3.11127px 3.11127px 0 #e7e7e7, 3.88909px 3.88909px 0 #e7e7e7, 4.6669px 4.6669px 0 #e7e7e7, 5.44472px 5.44472px 0 #e7e7e7, 6.22254px 6.22254px 0 #e7e7e7, 7.00036px 7.00036px 0 #e7e7e7, 7.77817px 7.77817px 0 #e7e7e7;
+  text-shadow: 1.5px 1.5px 0 #cac6c5, 0px 1.5px 0 #cac6c5, -1.5px -1.5px 0 #cac6c5, -1.5px -1.5px 0 #cac6c5, -1.5px 1.5px 0 #cac6c5, 1.5px -1.5px 0 #cac6c5, 0.77782px 0.77782px 0 #e7e7e7, 1.55563px 1.55563px 0 #e7e7e7, 2.33345px 2.33345px 0 #e7e7e7, 3.11127px 3.11127px 0 #e7e7e7, 3.88909px 3.88909px 0 #e7e7e7, 4.6669px 4.6669px 0 #e7e7e7, 5.44472px 5.44472px 0 #e7e7e7, 6.22254px 6.22254px 0 #e7e7e7, 7.00036px 7.00036px 0 #e7e7e7, 7.77817px 7.77817px 0 #e7e7e7;
   transition: all 0.5s ease-out; }
 
 header {
@@ -155,7 +155,8 @@ header {
 
 section {
   padding: 4rem;
-  min-height: 100vh; }
+  min-height: 100vh;
+  box-shadow: inset 0 0 0 100vh rgba(68, 68, 68, 0.6); }
 
 #home {
   background-position: center;
@@ -164,8 +165,7 @@ section {
   background-size: cover;
   color: #fff;
   background-image: url(../img/background.jpg);
-  text-align: center;
-  box-shadow: inset 0 0 0 100vh rgba(68, 68, 68, 0.8); }
+  text-align: center; }
   #home .icons {
     margin-top: 1rem; }
     #home .icons a {
@@ -203,7 +203,7 @@ section {
 #about {
   background: linear-gradient(to bottom, #7927b2, #fb3182); }
   #about .main-heading, #about .small-heading, #about .about-info .bio-heading, #about .about-info .bio-content, #about .about-info .bio-link {
-    background: #fff;
+    background: #cac6c5;
     width: fit-content;
     height: fit-content;
     padding: 10px; }
@@ -284,7 +284,8 @@ section {
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
-  margin-bottom: 0.3rem; }
+  margin-bottom: 0.3rem;
+  transition: all 0.5s ease-out; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background: #34c6d3;
     color: #000; }

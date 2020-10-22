@@ -2,9 +2,8 @@ $primary-color: #444;
 $secondary-color: #34c6d3; //#eece1a;
 $grayLight: #cac6c5;
 $offWhite: #e7e7e7;
-$show-home-image: true;
 $home-image: url(../img/background.jpg);
-$background-opacity:0.8;
+$background-opacity:0.6;
 @mixin easeOut {
     transition: all 0.5s ease-out;
 }

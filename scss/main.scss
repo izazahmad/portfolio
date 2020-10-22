@@ -24,7 +24,7 @@ h3 {
 }
 
 a {
-    color: #fff;
+    color: $grayLight;
     text-decoration: none;
 }
 
@@ -32,7 +32,7 @@ a {
     &:hover,
     &:focus {
         color: #000;
-        @include shade(text, $offWhite, #fff, 10, 135deg, true);
+        @include shade(text, $offWhite, $grayLight, 10, 135deg, true);
         @include easeOut();
     }
 }
@@ -50,6 +50,7 @@ header {
 section {
     padding: 4rem;
     min-height: 100vh;
+    box-shadow: inset 0 0 0 100vh rgba($primary-color, $background-opacity);
 }
 
 #home {
@@ -57,7 +58,7 @@ section {
     color: set-text-color($primary-color);
     background-image: $home-image;
     text-align: center;
-    box-shadow: inset 0 0 0 100vh rgba($primary-color, $background-opacity);
+    //box-shadow: inset 0 0 0 100vh rgba($primary-color, $background-opacity);
     .icons {
         margin-top: 1rem;
         a {
@@ -114,7 +115,7 @@ section {
 #about {
     background: linear-gradient(to bottom, #7927b2, #fb3182);
     .main-heading {
-        background: #fff;
+        background: $grayLight;
         width: fit-content;
         height: fit-content;
         padding: 10px;
@@ -231,6 +232,7 @@ section {
     padding: 0.5rem 1rem;
     border: 0;
     margin-bottom: 0.3rem;
+    @include easeOut();
     &:hover {
         background: $secondary-color;
         color: set-text-color($secondary-color);
