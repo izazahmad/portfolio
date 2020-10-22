@@ -10,7 +10,58 @@ let showMenu = false;
 
 menuBtn.addEventListener('click', toggleMenu);
 menuNav.addEventListener('click', hideMenuOnClick);
+// window.onscroll = function() { on_scroll() };
+// $(document).ready(function() {
+//     $(document).on("scroll", onScroll);
+// });
+// $(".link").click(function() {
 
+//     // Select all list items 
+//     var listItems = $(".link");
+
+//     // Remove 'active' tag for all list items 
+//     for (let i = 0; i < listItems.length; i++) {
+//         listItems[i].classList.remove("active");
+//     }
+
+//     // Add 'active' tag for currently selected item 
+//     this.classList.add("active");
+// });
+
+// function on_scroll() {
+//     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+//         document.getElementById("navbar-center").className = "navbar-on-scroll";
+
+//     } else {
+//         document.getElementById("navbar-center").className = "";
+//     }
+// }
+
+// function onScroll(event) {
+//     var scrollPos = $(document).scrollTop();
+//     $('#navbar-center a').each(function() {
+//         var currLink = $(this);
+//         var refElement = $(currLink.attr("href"));
+//         if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+//             $('#navbar-center a').removeClass("active");
+//             currLink.addClass("active");
+//         } else {
+//             currLink.removeClass("active");
+//         }
+//     });
+// }
+// Add active class to the current button (highlight it)
+// var header = document.getElementById("navbar-center");
+// var btns = header.getElementsByClassName("link");
+// for (var i = 0; i < btns.length; i++) {
+//     btns[i].addEventListener("click", function() {
+//         var current = document.getElementsByClassName("active");
+//         current[0].className = current[0].className.replace(" active", "");
+//         this.className += " active";
+//     });
+// }
+
+//
 function toggleMenu() {
     if (!showMenu) {
         menuBtn.classList.add('close');
