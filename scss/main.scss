@@ -43,10 +43,9 @@ header {
     width: 100%;
 }
 
-
-/* .text-secondary {
+.text-secondary {
     color: $secondary-color;
-} */
+}
 
 section {
     padding: 4rem;
@@ -82,7 +81,8 @@ section {
     color: $offWhite;
     text-decoration: none;
     @include outline($grayLight);
-    transition: all 400ms ease-in-out;
+    @include easeOut();
+    //transition: all 400ms ease-in-out;
     &:hover {
         color: $secondary-color;
     }
@@ -225,22 +225,6 @@ section {
     }
 }
 
-//cv linked button in about page
-.link-btn {
-    margin-top: 1rem;
-    font-size: 2rem;
-    border: 3px set-text-color($secondary-color) solid;
-    border-radius: 30px;
-    padding: 0.5rem 1.5rem;
-    margin-bottom: 3rem;
-    @include easeOut;
-    &:hover {
-        padding: 0.1rem 1rem;
-        background: $secondary-color;
-        color: set-text-color($secondary-color);
-    }
-}
-
 //button styles
 .btn {
     display: block;
@@ -273,4 +257,4 @@ section {
     height: 60px;
 }
 
-@import 'mobile';
+@import 'responsive';
