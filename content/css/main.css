@@ -203,9 +203,17 @@ section {
 #about {
   background: linear-gradient(to bottom, #7927b2, #fb3182); }
   #about .main-heading, #about .small-heading, #about .about-info .bio-heading, #about .about-info .bio-content, #about .about-info .bio-link {
+    -webkit-background: #cac6c5;
+    -moz-background: #cac6c5;
     background: #cac6c5;
+    -webkit-width: fit-content;
+    -moz-width: fit-content;
     width: fit-content;
+    -webkit-height: fit-content;
+    -moz-height: fit-content;
     height: fit-content;
+    -webkit-padding: 10px;
+    -moz-padding: 10px;
     padding: 10px; }
     #about .main-heading h1, #about .small-heading h1, #about .about-info .bio-heading h1, #about .about-info .bio-content h1, #about .about-info .bio-link h1, #about .small-heading h2, #about .about-info .bio-heading .small-heading h2, #about .small-heading .about-info .bio-heading h2, #about .about-info .bio-content .small-heading h2, #about .small-heading .about-info .bio-content h2, #about .about-info .bio-link .small-heading h2, #about .small-heading .about-info .bio-link h2, #about .about-info .bio-heading h3, #about .about-info .bio-content p, #about .about-info .bio-link a {
       background: linear-gradient(to right, #7927b2, #fb3182);
@@ -304,53 +312,3 @@ section {
   background: #2b2b2b;
   color: #fff;
   height: 60px; }
-
-@media screen and (max-width: 768px) {
-  section {
-    align-items: center;
-    text-align: center; }
-    section .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem;
-      font-size: 4rem; }
-  #home .sm-heading {
-    font-size: 1.4em; }
-  #home .icons a {
-    font-size: 1em; }
-  #home h1, #home #about .small-heading h2, #about .small-heading #home h2, #home #about .about-info .bio-heading h3, #about .about-info .bio-heading #home h3, #home #about .about-info .bio-content p, #about .about-info .bio-content #home p, #home #about .about-info .bio-link a, #about .about-info .bio-link #home a {
-    margin-top: 10vh; }
-  .header {
-    font-size: 60px; }
-  .bio-heading h3 {
-    font-size: 60px !important; }
-  .about-info .bio-content p {
-    font-size: 1.4rem !important; }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-branding {
-    height: 50vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url("../img/portrait_small.jpg");
-      width: 150px;
-      height: 150px; }
-  .menu-nav {
-    height: 50vh;
-    padding-bottom: 5%;
-    transform: translate3d(-100%, 0, 0); }
-    .menu-nav .nav-link {
-      font-size: 30px;
-      padding: 5px 0 0 0; }
-  #contact .boxes div {
-    font-size: 1.5rem; } }
-
-@media screen and (max-width: 500px) {
-  /* .projects {
-        grid-template-columns: 1fr;
-    } */ }
