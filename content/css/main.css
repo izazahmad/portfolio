@@ -1,28 +1,63 @@
-#navbar {
-  overflow: hidden;
-  position: relative; }
-  #navbar #navbar-center {
-    padding: 20px 30%;
-    text-align: center;
-    transition: all 0.5s ease-out; }
-    #navbar #navbar-center a {
-      color: #fff;
-      text-align: center;
-      font-size: 30px;
-      text-transform: uppercase;
-      padding: 1rem 0.5rem;
-      font-weight: 300;
-      text-decoration: none; }
-      #navbar #navbar-center a:hover, #navbar #navbar-center a:focus {
-        background: none;
-        color: #34c6d3; }
-    #navbar #navbar-center .active {
-      color: #34c6d3; }
+/* Large Devices like Desktops and laptops */
+/* Mediam Devices like Landscape Tablets and medium desktops*/
+/* small devices like protrait tablets and small desktops*/
+/* extra small devices like landscape phones and portrait tablets */
+/* extra small devices  */
+/* extra small devices  */
+/*  @mixin mediaSm {
+            @media screen and (max-width: 500px) {
+                @content;
+            }
+        }
+        
+        @mixin mediaMd {
+            @media screen and (max-width: 768px) {
+                @content;
+            }
+        }
+        
+        @mixin mediaLg {
+            @media screen and (min-width: 769px) and (max-width: 1170px) {
+                @content;
+            }
+        }
+        
+        @mixin mediaXl {
+            @media screen and (min-width: 1171px) {
+                @content;
+            }
+        } */
+/* #navbar {
+    overflow: hidden;
+    position: relative;
+    #navbar-center {
+        padding: 20px 30%;
+        text-align: center;
+        @include easeOut();
+        a {
+            color: #fff;
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            padding: 1rem 0.5rem;
+            font-weight: 300;
+            text-decoration: none;
+            &:hover,
+            &:focus {
+                background: none;
+                color: $secondary-color;
+            }
+        }
+        .active {
+            color: $secondary-color;
+        }
+    }
+}
 
 .navbar-on-scroll {
-  padding: 10px 30% !important;
-  background: rgba(0, 0, 0, 0.7); }
-
+    padding: 10px 30% !important;
+    background: rgba(0, 0, 0, 0.7);
+} */
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -312,3 +347,88 @@ section {
   background: #2b2b2b;
   color: #fff;
   height: 60px; }
+
+/* Large Devices like Desktops and laptops */
+/* Mediam Devices like Landscape Tablets and medium desktops*/
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  #contact .boxes div {
+    font-size: 1.5rem; } }
+
+/* small devices like protrait tablets and small desktops*/
+/* extra small devices like landscape phones and portrait tablets */
+@media screen and (max-width: 767px) {
+  section {
+    align-items: center;
+    text-align: center; }
+    section .lg-heading {
+      font-size: 4rem; }
+  #home .sm-heading {
+    font-size: 1.4em; }
+  #home .icons a {
+    font-size: 1em; }
+  #home .headingWrapper {
+    margin-top: 10vh; }
+  .header {
+    font-size: 60px; }
+  .bio-heading h3 {
+    font-size: 60px !important; }
+  .about-info .bio-content p {
+    font-size: 1.4rem !important; }
+  .menu-branding .portrait {
+    background: url("../img/portrait_small.jpg");
+    width: 150px;
+    height: 150px; }
+  .menu-nav .nav-link {
+    font-size: 30px;
+    padding: 5px 0 0 0; }
+  #contact .boxes div {
+    font-size: 1.5rem; } }
+
+/* extra small devices  */
+@media screen and (max-width: 480px) {
+  section .lg-heading {
+    font-size: 2rem; }
+  section .sm-heading {
+    font-size: 1em; }
+  #home .sm-heading {
+    font-size: 1em; }
+  #home .icons a {
+    font-size: 0.7em; }
+  .header {
+    font-size: 35px; }
+  .bio-heading h3 {
+    font-size: 45px !important; }
+  .about-info .bio-content p,
+  .about-info .bio-link a {
+    font-size: 1rem !important; }
+  .menu-branding .portrait {
+    width: 130px;
+    height: 130px; }
+  .menu-nav .nav-link {
+    font-size: 20px; }
+  #contact .boxes div {
+    font-size: 1.5rem; }
+  #work .projects {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    #work .projects img {
+      height: 150px; }
+    #work .projects .item .btn-light,
+    #work .projects .item .btn-dark {
+      font-size: 0.8rem; }
+  #contact .boxes div {
+    font-size: 1rem; }
+  .menu-btn {
+    right: 15px; } }
+
+/* extra small devices  */
+@media screen and (max-width: 320px) {
+  #home .sm-heading {
+    font-size: 0.8em; }
+  #home .icons a {
+    font-size: 0.5em; }
+  section .lg-heading {
+    font-size: 1.5rem; }
+  section .sm-heading {
+    font-size: 0.8em; }
+  .header {
+    font-size: 29px; } }
