@@ -238,20 +238,17 @@ section {
 #about {
   background: linear-gradient(to bottom, #7927b2, #fb3182); }
   #about .main-heading, #about .small-heading, #about .about-info .bio-heading, #about .about-info .bio-content, #about .about-info .bio-link {
-    -webkit-background: #cac6c5;
-    -moz-background: #cac6c5;
     background: #cac6c5;
-    -webkit-width: fit-content;
-    -moz-width: fit-content;
-    width: fit-content;
-    -webkit-height: fit-content;
-    -moz-height: fit-content;
     height: fit-content;
-    -webkit-padding: 10px;
-    -moz-padding: 10px;
-    padding: 10px; }
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    padding: 10px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content; }
     #about .main-heading h1, #about .small-heading h1, #about .about-info .bio-heading h1, #about .about-info .bio-content h1, #about .about-info .bio-link h1, #about .small-heading h2, #about .about-info .bio-heading .small-heading h2, #about .small-heading .about-info .bio-heading h2, #about .about-info .bio-content .small-heading h2, #about .small-heading .about-info .bio-content h2, #about .about-info .bio-link .small-heading h2, #about .small-heading .about-info .bio-link h2, #about .about-info .bio-heading h3, #about .about-info .bio-content p, #about .about-info .bio-link a {
       background: linear-gradient(to right, #7927b2, #fb3182);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-transform: uppercase; }
