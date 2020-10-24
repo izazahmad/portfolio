@@ -1,17 +1,33 @@
-//Widescreens
+/* Large Devices like Desktops and laptops */
+
+//min-width 1200 px        
 @include mediaXl {}
 
-//desktops and laptops
-@include mediaLg {}
 
-//tablets and small laptops
-@include mediaMd {
+/* Mediam Devices like Landscape Tablets and medium desktops*/
+
+//max-width 1199px and min width 992px
+@include mediaLg {
+    #contact .boxes div {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* small devices like protrait tablets and small desktops*/
+
+//max width 991px and min width 768px
+@include mediaMd {}
+
+
+/* extra small devices like landscape phones and portrait tablets */
+
+//max width 767px
+@include mediaSm {
     section {
         align-items: center;
         text-align: center;
         .lg-heading {
-            line-height: 1;
-            margin-bottom: 1rem;
             font-size: 4rem;
         }
     }
@@ -24,7 +40,7 @@
                 font-size: 1em;
             }
         }
-        h1 {
+        .headingWrapper {
             margin-top: 10vh;
         }
     }
@@ -37,47 +53,30 @@
     .about-info .bio-content p {
         font-size: 1.4rem !important;
     }
-    ul.menu-nav,
-    div.menu-branding {
-        float: none;
-        width: 100%;
-        min-height: 0;
-        &.show {
-            transform: translate3d(0, 0, 0);
-        }
+    .menu-branding .portrait {
+        background: url('../img/portrait_small.jpg');
+        width: 150px;
+        height: 150px;
     }
-    .menu-branding {
-        height: 50vh;
-        transform: translate3d(100%, 0, 0);
-        .portrait {
-            background: url('../img/portrait_small.jpg');
-            width: 150px;
-            height: 150px;
-        }
-    }
-    .menu-nav {
-        height: 50vh;
-        padding-bottom: 5%;
-        transform: translate3d(-100%, 0, 0);
-        .nav-link {
-            font-size: 30px;
-            padding: 5px 0 0 0;
-        }
+    .menu-nav .nav-link {
+        font-size: 30px;
+        padding: 5px 0 0 0;
     }
     #contact .boxes div {
         font-size: 1.5rem;
     }
 }
 
-//smartphones
-@include mediaSm {
+
+/* extra small devices  */
+
+//max width 480px
+@include mediaXs {
     section {
-        align-items: center;
-        text-align: center;
         .lg-heading {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
-        h2 {
+        .sm-heading {
             font-size: 1em;
         }
     }
@@ -85,21 +84,33 @@
         .sm-heading {
             font-size: 1em;
         }
+        .icons {
+            a {
+                font-size: 0.7em;
+            }
+        }
     }
     .header {
-        font-size: 45px;
+        font-size: 35px;
     }
     .bio-heading h3 {
         font-size: 45px !important;
     }
-    .about-info .bio-content p {
-        font-size: 1rem !important;
+    .about-info {
+        .bio-content p,
+        .bio-link a {
+            font-size: 1rem !important;
+        }
+    }
+    .menu-branding .portrait {
+        width: 130px;
+        height: 130px;
+    }
+    .menu-nav .nav-link {
+        font-size: 20px;
     }
     #contact .boxes div {
-        font-size: 1rem;
-    }
-    .bio-link a {
-        font-size: 1.5rem !important;
+        font-size: 1.5rem;
     }
     #work .projects {
         //display: grid;
@@ -107,7 +118,45 @@
         //padding: 0;
         grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
         img {
-            height: 200px;
+            height: 150px;
         }
+        .item .btn-light,
+        .item .btn-dark {
+            font-size: 0.8rem;
+        }
+    }
+    #contact .boxes div {
+        font-size: 1rem;
+    }
+    .menu-btn {
+        right: 15px;
+    }
+}
+
+
+/* extra small devices  */
+
+//max width 320px
+@include mediaXXs {
+    #home {
+        .sm-heading {
+            font-size: 0.8em;
+        }
+        .icons {
+            a {
+                font-size: 0.5em;
+            }
+        }
+    }
+    section {
+        .lg-heading {
+            font-size: 1.5rem;
+        }
+        .sm-heading {
+            font-size: 0.8em;
+        }
+    }
+    .header {
+        font-size: 29px;
     }
 }
