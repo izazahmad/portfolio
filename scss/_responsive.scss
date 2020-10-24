@@ -71,11 +71,43 @@
 
 //smartphones
 @include mediaSm {
-    /* .projects {
-        grid-template-columns: 1fr;
-    } */
-    // .link-btn {
-    //     font-size: 1rem;
-    //     border: 2px #fff solid;
-    // }
+    section {
+        align-items: center;
+        text-align: center;
+        .lg-heading {
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 1em;
+        }
+    }
+    #home {
+        .sm-heading {
+            font-size: 1em;
+        }
+    }
+    .header {
+        font-size: 45px;
+    }
+    .bio-heading h3 {
+        font-size: 45px !important;
+    }
+    .about-info .bio-content p {
+        font-size: 1rem !important;
+    }
+    #contact .boxes div {
+        font-size: 1rem;
+    }
+    .bio-link a {
+        font-size: 1.5rem !important;
+    }
+    #work .projects {
+        //display: grid;
+        //grid-gap: 0.7rem;
+        //padding: 0;
+        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
+        img {
+            height: 200px;
+        }
+    }
 }

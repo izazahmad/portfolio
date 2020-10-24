@@ -125,6 +125,18 @@ $background-opacity:0.6;
     text-shadow: 1.5px 1.5px 0 $color, -1.5px -1.5px 0 $color, -1.5px -1.5px 0 $color, -1.5px 1.5px 0 $color, 1.5px -1.5px 0 $color;
 }
 
+//prefix
+@mixin prefix($declarations, $prefixes: ()) {
+    @each $property,
+    $value in $declarations {
+        @each $prefix in $prefixes {
+            #{'-' + $prefix + '-' + $property}: $value;
+        }
+        // Output standard non-prefixed declaration
+        #{$property}: $value;
+    }
+}
+
 //Media Query mixins
 @mixin mediaSm {
     @media screen and (max-width: 500px) {

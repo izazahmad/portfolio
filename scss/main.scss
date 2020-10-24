@@ -115,10 +115,7 @@ section {
 #about {
     background: linear-gradient(to bottom, #7927b2, #fb3182);
     .main-heading {
-        background: $grayLight;
-        width: fit-content;
-        height: fit-content;
-        padding: 10px;
+        @include prefix(( background: $grayLight, width: fit-content, height: fit-content, padding: 10px), webkit moz);
         h1 {
             background: linear-gradient(to right, #7927b2, #fb3182);
             -webkit-background-clip: text;
