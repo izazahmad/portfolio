@@ -1,13 +1,13 @@
 @import 'config';
 @import 'menu';
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
 body {
     height: 100%;
-    // width: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
@@ -51,7 +51,7 @@ header {
 section {
     padding: 4rem;
     min-height: 100vh;
-    //width: 100%;
+    -webkit-box-shadow: inset 0 0 0 100vh rgba($primary-color, $background-opacity);
     box-shadow: inset 0 0 0 100vh rgba($primary-color, $background-opacity);
 }
 
@@ -60,7 +60,6 @@ section {
     color: set-text-color($primary-color);
     background-image: $home-image;
     text-align: center;
-    //box-shadow: inset 0 0 0 100vh rgba($primary-color, $background-opacity);
     .icons {
         margin-top: 1rem;
         a {
@@ -85,7 +84,6 @@ section {
     text-decoration: none;
     @include outline($grayLight);
     @include easeOut();
-    //transition: all 400ms ease-in-out;
     &:hover {
         color: $secondary-color;
     }
@@ -94,10 +92,12 @@ section {
 // effect for pushing the text down onto the page
 // default is the letters emerging from the page and merging back down on hover
 .header--pushDown {
-    @include shade(text, $secondary-color, #333, 10, 135deg, true); //#aaa
+    @include shade(text, $secondary-color, #333, 10, 135deg, true);
     &:hover {
+        -webkit-transform: translate(9px, 9px);
+        -ms-transform: translate(9px, 9px);
         transform: translate(9px, 9px);
-        @include outline($offWhite); //grayLight
+        @include outline($offWhite);
     }
 }
 
@@ -105,16 +105,22 @@ section {
 // simply by adjusting the translate position a little
 .header--shadow {
     &:hover {
+        -webkit-transform: translate(5px, 0);
+        -ms-transform: translate(5px, 0);
         transform: translate(5px, 0);
     }
     &.header--raiseUp {
         &:hover {
+            -webkit-transform: translate(-5px, 0);
+            -ms-transform: translate(-5px, 0);
             transform: translate(-5px, 0);
         }
     }
 }
 
 #about {
+    background: -webkit-gradient(linear, left top, left bottom, from(#7927b2), to(#fb3182));
+    background: -o-linear-gradient(top, #7927b2, #fb3182);
     background: linear-gradient(to bottom, #7927b2, #fb3182);
     .main-heading {
         background: $grayLight;
@@ -126,6 +132,8 @@ section {
         width: -moz-fit-content;
         width: fit-content;
         h1 {
+            background: -webkit-gradient(linear, left top, right top, from(#7927b2), to(#fb3182));
+            background: -o-linear-gradient(left, #7927b2, #fb3182);
             background: linear-gradient(to right, #7927b2, #fb3182);
             background-clip: text;
             -webkit-background-clip: text;
@@ -179,13 +187,13 @@ section {
 
 //work/projects
 #work {
-    //background: linear-gradient(to bottom right, lime, lightblue) 50% 50% / 100% 100% no-repeat;
     background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
     background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
     .sm-heading {
         margin-bottom: 20px;
     }
     .projects {
+        display: -ms-grid;
         display: grid;
         grid-gap: 0.7rem;
         grid-template-columns: repeat( auto-fit, minmax(300px, 1fr));
@@ -210,9 +218,15 @@ section {
     background-image: url(../img/world-map.png);
     color: set-text-color($primary-color);
     .boxes {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         margin-top: 1rem;
         div {

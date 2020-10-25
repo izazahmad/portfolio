@@ -25,6 +25,8 @@
 //max width 767px
 @include mediaSm {
     section {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         text-align: center;
         .lg-heading {
@@ -113,9 +115,6 @@
         font-size: 1.5rem;
     }
     #work .projects {
-        //display: grid;
-        //grid-gap: 0.7rem;
-        //padding: 0;
         grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
         img {
             height: 150px;
